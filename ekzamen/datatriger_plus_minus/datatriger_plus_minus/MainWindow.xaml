@@ -1,0 +1,42 @@
+﻿<Window x:Class="datatriger_plus_minus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datatriger_plus_minus"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="300">
+    <Window.Resources>
+        <Style x:Key="Ntb" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=EnterNumber, Path=Text[0]}"  Value="-">
+                    <Setter Property="Text"  Value="Отрицательный"/>                    
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="Ptb" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=EnterNumber, Path=Text[0]}" Value="+" >
+                    <Setter Property="Text"  Value="Положительный"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+        <TextBox x:Name="EnterNumber"
+                 Width="70" Height="25"
+                 Margin="20"
+                 TextChanged="EnterNumber_TextChanged"/>
+            <TextBlock                  
+                   Style="{DynamicResource Ntb}"
+                   Width="100" Height="25"
+                   Margin="20"
+                   />
+            <TextBlock   
+                       Style="{DynamicResource Ptb}"
+                   Width="100" Height="25"
+                   Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Window>
