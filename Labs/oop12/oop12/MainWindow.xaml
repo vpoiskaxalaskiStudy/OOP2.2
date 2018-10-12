@@ -1,0 +1,26 @@
+﻿<Window x:Class="oop12.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oop12"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#334251">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Background="#4f745e">
+            <Button Name="Add"
+                    Width="150" Height="35"
+                    Margin="32,5,610,10"
+                    Content="Add"
+                    Click="Add_Click"/>
+        </Grid>
+        <WrapPanel Grid.Row="1"
+                   Name="Field"
+                   Margin="5"/>
+    </Grid>
+</Window>
